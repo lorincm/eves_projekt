@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <fstream>
 #include <Windows.h>
 #include <string>
@@ -28,13 +28,15 @@ int main(int argc, const char * argv[])
 	);
 	currentDate = cstrMessage;
 	
+	input(array, szakirodalom, tmp);
+
 	while (!file.eof())
 	{
 		getline(file, currentline);
 
 		if (currentline == "<!---->")
 		{
-			v.push_back(u8"<br></br> <table> <tr><th>Dátum</th><th>A részfeladat megnevezése</th><th>Elvégzett munka rövid leírása</th><th>Tapasztalatok</th><th>Igénybe vett szakirodalom</th></tr><tr><td>");
+			v.push_back(u8"<br></br><table><tr><th>Dátum</th><th>A részfeladat megnevezése</th><th>Elvégzett munka rövid leírása</th><th>Tapasztalatok</th><th>Igénybe vett szakirodalom</th></tr><tr><td>");
 			v.push_back(currentDate);
 			v.push_back("</td><td>");
 			v.push_back(array[0]);
@@ -46,6 +48,7 @@ int main(int argc, const char * argv[])
 			v.push_back(array[3]);
 			v.push_back("</td></table>");
 			v.push_back("<!---->");
+			break;
 		}
 		else
 		{
@@ -60,8 +63,10 @@ int main(int argc, const char * argv[])
 	{
 		if (v[i] == "<!---->")
 		{
+
 			file2 << endl;
 			file2 << v[i] << endl;
+			file2 << u8"<a href=\"#top\">[ugrás az oldal tetejére]</a></center><div id = \"bot\"></div>\n</center></body></html>";
 		}
 		else
 		{
