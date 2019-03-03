@@ -19,7 +19,8 @@ while True:
         szakirodalom.append(x)
         szakirodalom.append("\">") 
         szakirodalom.append(x) 
-        szakirodalom.append("</a> ") 
+        szakirodalom.append("</a> ")
+        szakirodalom.append(" <br>") 
 
 tmp = ""
 
