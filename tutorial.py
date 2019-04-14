@@ -33,11 +33,11 @@ for i in range(10000):
 
         dz_cost = dcost * dsigmoid(z)
         
-        w[0] = w[0] - learning_rate * (dz_cost * data[0])
-        w[1] = w[1] - learning_rate * (dz_cost * data[1])
-        w[2] = w[2] - learning_rate * (dz_cost * data[2])
-        w[3] = w[3] - learning_rate * (dz_cost * data[3])
-        b    = b    - learning_rate * (dz_cost * 1)
+        w[0] -= learning_rate * (dz_cost * data[0])
+        w[1] -= learning_rate * (dz_cost * data[1])
+        w[2] -= learning_rate * (dz_cost * data[2])
+        w[3] -= learning_rate * (dz_cost * data[3])
+        b    -= learning_rate * (dz_cost * 1)
         
         if(i==100 and t==1 or i==9999 and t==1): #debug
             print(w[0], w[1], w[2], [w3], b)
