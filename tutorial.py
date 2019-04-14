@@ -40,7 +40,7 @@ for i in range(10000):
         b    -= learning_rate * (dz_cost * 1)
         
         if(i==100 and t==1 or i==9999 and t==1): #debug
-            print(w[0], w[1], w[2], [w3], b)
+            print(w[0], w[1], w[2], w[3], b)
             
 test = [5.1, 3.5, 1.4, 0.2]
 
