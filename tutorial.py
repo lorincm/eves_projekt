@@ -45,6 +45,4 @@ for i in range(10000):
 test = [5.1, 3.5, 1.4, 0.2]
 
 z = test[0] * w[0] + test[1] * w[1] + test[2] * w[2] + test[3] * w[3] + b
-pred = sigmoid(z)
-
-print(pred)
+print(sigmoid(z))
